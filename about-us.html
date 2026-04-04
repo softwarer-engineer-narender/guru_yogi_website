@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru Yogi Athletic Academy | Train Like a Champion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oswald:wght@500;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #ffffff; }
+        h1, h2, h3, .sporty { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+        
+        .neon-border { border: 1px solid #ccff00; }
+        .neon-bg { background-color: #ccff00; }
+        .neon-text { color: #ccff00; }
+        .btn-shadow:hover { box-shadow: 0 0 20px rgba(204, 255, 0, 0.4); }
+        
+        .gradient-overlay {
+            background: linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(10,10,10,0.4) 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed bottom-0 left-0 w-full z-50 grid grid-cols-2 md:hidden">
+        <a href="https://wa.me/+918683861820" class="bg-green-600 text-white py-4 flex items-center justify-center font-bold">
+            <i class="fab fa-whatsapp mr-2"></i> WHATSAPP
+        </a>
+        <a href="#join" class="neon-bg text-black py-4 flex items-center justify-center font-bold">
+            JOIN NOW
+        </a>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative z-50">
+        <div class="text-2xl font-bold tracking-tighter uppercase leading-none">
+            GURU <span class="neon-text" style="color: #ccff00;">YOGI</span> 
+            <span class="text-[10px] font-light block tracking-widest text-gray-400">ATHLETIC ACADEMY</span>
+        </div>
+
+        <div class="hidden md:flex space-x-8 font-bold text-sm tracking-widest uppercase">
+            <a href="/" class="hover:text-[#ccff00] transition">Home</a>
+            <!-- <a href="#about" class="hover:text-[#ccff00] transition">About Us</a> -->
+            <!-- <a href="#programs" class="hover:text-[#ccff00] transition">Programs</a>
+            <a href="#results" class="hover:text-[#ccff00] transition">Success Stories</a>
+            <a href="#coach" class="hover:text-[#ccff00] transition">The Coach</a> -->
+        </div>
+
+        <a href="tel:+918683861820" class="hidden md:block border border-[#ccff00] text-[#ccff00] px-6 py-2 rounded-full font-bold hover:bg-[#ccff00] hover:text-black transition text-sm">
+            <i class="fas fa-phone-alt mr-2"></i> CALL NOW
+        </a>
+
+        <button id="menu-btn" class="md:hidden text-[#ccff00] focus:outline-none p-2">
+            <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen bg-black translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col items-center justify-center space-y-10 md:hidden">
+        <a href="/" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]" onclick="toggleMenu()">Home</a>
+        <!-- <a href="#programs" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]" onclick="toggleMenu()">Programs</a>
+        <a href="#results" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]" onclick="toggleMenu()">Success Stories</a>
+        <a href="#coach" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]" onclick="toggleMenu()">The Coach</a> -->
+        
+        <div class="pt-6">
+            <a href="tel:+918683861820" class="bg-[#ccff00] text-black px-10 py-4 rounded-full font-black uppercase text-lg shadow-[0_0_20px_rgba(204,255,0,0.3)]">
+                <i class="fas fa-phone-alt mr-2"></i> Call Now
+            </a>
+        </div>
+    </div>
+</nav>
+<section id="about" class="py-24 bg-zinc-900 px-4 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <h2 class="text-5xl md:text-7xl font-black mb-6 leading-tight uppercase">
+                WE DON’T JUST TRAIN RUNNERS —<br>
+                <span class="neon-text italic">WE BUILD CHAMPIONS.</span>
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-4xl mx-auto font-medium">
+                At Guru Yogi Athletic Running Academy, we transform beginners into disciplined athletes and help aspirants achieve their dream of selection in army, police, and competitive sports.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-24">
+            <div class="relative order-2 md:order-1">
+                <img src="images/img-1.jpeg" class="rounded-2xl border-b-8 border-r-8 border-[#ccff00] grayscale hover:grayscale-0 transition duration-700" alt="Guru Yogi Training">
+                <div class="absolute -bottom-6 -left-6 bg-white text-black p-6 font-black text-2xl skew-x-[-10deg]">
+                    RESULT ORIENTED
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <h3 class="text-3xl font-bold mb-6 neon-text">WHO WE ARE</h3>
+                <p class="text-lg text-gray-300 leading-relaxed mb-8">
+                    Guru Yogi Athletic Running Academy is a performance-focused training center dedicated to developing **speed, stamina, and mental toughness.** Whether you are stepping onto the track for the first time or the thousandth, our environment is built for your growth.
+                </p>
+                <div class="space-y-4 mb-8">
+                    <p class="flex items-center text-gray-200 font-bold"><i class="fas fa-running neon-text mr-4 w-6"></i> Beginners starting their fitness journey</p>
+                    <p class="flex items-center text-gray-200 font-bold"><i class="fas fa-medal neon-text mr-4 w-6"></i> Students preparing for physical tests</p>
+                    <p class="flex items-center text-gray-200 font-bold"><i class="fas fa-user-shield neon-text mr-4 w-6"></i> Competitive runners aiming for excellence</p>
+                </div>
+                <div class="bg-black p-6 rounded-xl border border-white/10">
+                    <p class="text-sm uppercase tracking-widest text-gray-500 mb-2">Our Mission is Simple</p>
+                    <h4 class="text-3xl font-black italic">TURN <span class="neon-text underline underline-offset-8">मेहनत</span> INTO RESULTS.</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-black/50 p-10 border border-white/5 hover:border-[#ccff00] transition group">
+                <i class="fas fa-clipboard-list text-4xl neon-text mb-6"></i>
+                <h4 class="text-2xl font-bold mb-4">Structured System</h4>
+                <p class="text-gray-500">Every lap and every sprint is logged. We follow a scientific daily training system designed for peak performance.</p>
+            </div>
+            <div class="bg-black/50 p-10 border border-white/5 hover:border-[#ccff00] transition group">
+                <i class="fas fa-user-check text-4xl neon-text mb-6"></i>
+                <h4 class="text-2xl font-bold mb-4">Personal Attention</h4>
+                <p class="text-gray-500">No student is left behind. Guru Yogi provides individual corrections to form, breathing, and stride mechanics.</p>
+            </div>
+            <div class="bg-black/50 p-10 border border-white/5 hover:border-[#ccff00] transition group">
+                <i class="fas fa-mountain text-4xl neon-text mb-6"></i>
+                <h4 class="text-2xl font-bold mb-4">Real Ground Practice</h4>
+                <p class="text-gray-500">No treadmills. We train on outdoor tracks to build the real-world stamina required for army and police tests.</p>
+            </div>
+            <div class="bg-black/50 p-10 border border-white/5 hover:border-[#ccff00] transition group">
+                <i class="fas fa-clock text-4xl neon-text mb-6"></i>
+                <h4 class="text-2xl font-bold mb-4">Speed & Endurance</h4>
+                <p class="text-gray-500">A balanced focus on explosive speed for sprints and lung-busting endurance for long-distance runs.</p>
+            </div>
+            <div class="bg-black/50 p-10 border border-white/5 hover:border-[#ccff00] transition group">
+                <i class="fas fa-fist-raised text-4xl neon-text mb-6"></i>
+                <h4 class="text-2xl font-bold mb-4">Discipline Environment</h4>
+                <p class="text-gray-500">We don't just train legs; we train minds. Discipline is our foundation. Excuses are not allowed.</p>
+            </div>
+            <div class="bg-black/50 p-10 border border-white/5 hover:border-[#ccff00] transition group">
+                <i class="fas fa-trophy text-4xl neon-text mb-6"></i>
+                <h4 class="text-2xl font-bold mb-4">Proven Track Record</h4>
+                <p class="text-gray-500">Hundreds of successful selections in Indian Army, Haryana Police, and State-level athletic meets.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="py-12 border-t border-white/10 text-center">
+        <div class="mb-8">
+            <a href="https://www.instagram.com/guru_yogi_athletic_academy_pal/" target="_blank" class="mx-3 text-xl hover:text-[#ccff00] transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="mx-3 text-xl hover:text-[#ccff00] transition" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/channel/UCWp7C8-i5M7KE3KScx8gtOA" target="_blank" class="mx-3 text-xl hover:text-[#ccff00] transition"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p id="copyright" class="text-gray-500 text-sm"></p>
+    </footer>
+
+    <script>
+        document.getElementById("copyright").innerHTML =
+  `© ${new Date().getFullYear()} Guru Yogi Athletic Academy. No excuses, just results.`;
+
+  const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    function toggleMenu() {
+        // Toggle the slide-in class (Removes translate-x-full to show menu)
+        mobileMenu.classList.toggle('translate-x-full');
+        
+        // Change icon and handle body scroll
+        if (mobileMenu.classList.contains('translate-x-full')) {
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+            document.body.style.overflow = 'auto'; 
+        } else {
+            menuIcon.classList.replace('fa-bars', 'fa-times');
+            document.body.style.overflow = 'hidden'; // Stop background from scrolling
+        }
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

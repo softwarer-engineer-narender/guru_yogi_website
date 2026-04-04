@@ -1,20 +1,26 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RunCoach Header</title>
-
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Icons -->
-  <script src="https://unpkg.com/feather-icons"></script>
-</head>
-
-<style>
-  @keyframes scroll {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru Yogi Athletic Academy | Train Like a Champion</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oswald:wght@500;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #ffffff; }
+        h1, h2, h3, .sporty { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+        
+        .neon-border { border: 1px solid #ccff00; }
+        .neon-bg { background-color: #ccff00; }
+        .neon-text { color: #ccff00; }
+        .btn-shadow:hover { box-shadow: 0 0 20px rgba(204, 255, 0, 0.4); }
+        
+        .gradient-overlay {
+            background: linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(10,10,10,0.4) 100%);
+        }
+         @keyframes scroll {
     0% {
       transform: translateX(0);
     }
@@ -28,355 +34,386 @@
     animation: scroll 25s linear infinite;
     width: max-content;
   }
-</style>
 
-<body class="bg-[#0f172a]">
-  <!-- HEADER -->
-  <header class="w-full bg-[#111827] border-b border-white/5">
-    <div class="mx-auto px-7">
-      <div class="flex items-center justify-between h-16">
+  #results-slider::-webkit-scrollbar {
+        display: none;
+    }
+    </style>
+</head>
+<body>
 
-        <!-- Logo -->
-        <div class="flex items-center">
-          <img src="/images/logo.png" alt="Guru Yogi Athletic Academy Logo" class="max-h-20 w-auto object-contain" />
+    <div class="fixed bottom-0 left-0 w-full z-50 grid grid-cols-2 md:hidden">
+        <a href="https://wa.me/8683861820" class="bg-green-600 text-white py-4 flex items-center justify-center font-bold">
+            <i class="fab fa-whatsapp mr-2"></i> WHATSAPP
+        </a>
+        <a href="#join" class="neon-bg text-black py-4 flex items-center justify-center font-bold">
+            JOIN NOW
+        </a>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative z-50">
+        <div class="text-2xl font-bold tracking-tighter uppercase leading-none">
+            GURU <span class="neon-text" style="color: #ccff00;">YOGI</span> 
+            <span class="text-[10px] font-light block tracking-widest text-gray-400">ATHLETIC ACADEMY</span>
         </div>
 
-        <!-- Desktop Menu -->
-        <nav class="hidden md:flex rounded-full px-8 py-2">
-          <ul class="flex items-center gap-8 text-sm font-medium">
-            <li class="text-orange-500">Home</li>
-            <li class="text-white hover:text-orange-400 cursor-pointer">
-              About Us
-            </li>
-            <li class="text-white hover:text-orange-400 cursor-pointer">
-              Coaches
-            </li>
-            <li class="text-white hover:text-orange-400 cursor-pointer">
-              Pricing
-            </li>
-            <!-- <li class="text-white hover:text-orange-400 cursor-pointer">
-              Blog
-            </li> -->
-          </ul>
-        </nav>
-
-        <!-- Login Button -->
-        <div class="hidden md:block">
-          <button
-            class="flex items-center gap-2 border border-[#3a3a3a] px-4 py-2 rounded-lg text-white hover:bg-[#333] transition">
-            <i data-feather="user" class="w-4 h-4"></i>
-            Log In
-          </button>
+        <div class="hidden md:flex space-x-8 font-bold text-sm tracking-widest uppercase">
+            <a href="/" class="hover:text-[#ccff00] transition">Home</a>
+            <a href="/about-us.html" class="hover:text-[#ccff00] transition">About Us</a>
+            <a href="#programs" class="hover:text-[#ccff00] transition">Programs</a>
+            <!-- <a href="#results" class="hover:text-[#ccff00] transition">Success Stories</a> -->
+            <a href="#coach" class="hover:text-[#ccff00] transition">The Coach</a>
         </div>
 
-        <!-- Mobile Menu Button -->
-        <button id="menuBtn" class="md:hidden text-white">
-          <i data-feather="menu"></i>
+        <a href="tel:+918683861820" class="hidden md:block border border-[#ccff00] text-[#ccff00] px-6 py-2 rounded-full font-bold hover:bg-[#ccff00] hover:text-black transition text-sm">
+            <i class="fas fa-phone-alt mr-2"></i> CALL NOW
+        </a>
+
+        <button id="menu-btn" class="md:hidden text-[#ccff00] focus:outline-none p-2">
+            <i class="fas fa-bars text-2xl" id="menu-icon"></i>
         </button>
-
-      </div>
     </div>
 
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-[#2a2a2a] px-6 py-4">
-      <ul class="space-y-4 text-white">
-        <li class="text-orange-500">Home</li>
-        <li>About Us</li>
-        <li>Coaches</li>
-        <li>Pricing</li>
-        <li>Blog</li>
-        <li>
-          <button
-            class="w-full flex items-center justify-center gap-2 border border-[#3a3a3a] px-4 py-2 rounded-lg mt-4">
-            <i data-feather="user" class="w-4 h-4"></i>
-            Log In
-          </button>
-        </li>
-      </ul>
-    </div>
-  </header>
-
-  <section class="w-full mt-20 flex items-center justify-center px-4">
-    <div class="max-w-6xl mx-auto text-center">
-      <!-- Heading -->
-      <h1 class="text-3xl text-white sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-loose">
-        Your training is analyzed
-        <br />
-
-        by a 15 Years Of Experienced Coach
-        <span class="text-orange-500 leading-snug">Guru Yogi</span>
-      </h1>
-
-      <!-- Coaches Images -->
-      <div class="flex justify-center mt-8">
-        <div class="flex -space-x-4">
-          <img src="/images/img-1.jpeg" class="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-[#1f1f1f]" />
-          <img src="/images/IMG-20220127-WA0001.jpg"
-            class="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-[#1f1f1f]" />
-          <img src="/images/IMG-20220713-WA0022.jpg"
-            class="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-[#1f1f1f]" />
-          <img src="/images/IMG-20230321-WA0010.jpg"
-            class="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-[#1f1f1f]" />
-          <img src="/images/IMG-20230411-WA0026.jpg"
-            class="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 border-[#1f1f1f]" />
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen bg-black translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col items-center justify-center space-y-10 md:hidden">
+        <a href="/about-us.html" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]" onclick="toggleMenu()">About Us</a>
+        <a href="#programs" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]" onclick="toggleMenu()">Programs</a>
+        <!-- <a href="#results" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]" onclick="toggleMenu()">Success Stories</a> -->
+        <a href="#coach" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]" onclick="toggleMenu()">The Coach</a>
+        
+        <div class="pt-6">
+            <a href="tel:+918683861820" class="bg-[#ccff00] text-black px-10 py-4 rounded-full font-black uppercase text-lg shadow-[0_0_20px_rgba(204,255,0,0.3)]">
+                <i class="fas fa-phone-alt mr-2"></i> Call Now
+            </a>
         </div>
-      </div>
+    </div>
+</nav>
 
-      <!-- Description -->
-      <p class="mt-6 text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-        These coaches review your training and provide personal insights. Take
-        a 14-day free trial with your coach and unlock a
-        <span class="text-white font-medium">FREE Coach Connect.</span>
-      </p>
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/banner.avif" class="w-full h-full object-cover opacity-40" alt="Athlete training">
+            <div class="absolute inset-0 gradient-overlay"></div>
+        </div>
 
-      <!-- App Buttons -->
-      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <!-- <button
-            class="bg-white text-black flex items-center gap-3 px-6 py-3 rounded-xl shadow hover:scale-105 transition"
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
-              class="w-5 h-5"
-            />
-            <div class="text-left text-sm">
-              <p class="text-xs">Download on the</p>
-              <p class="font-semibold leading-none">App Store</p>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 py-20 text-center md:text-left">
+            <span class="inline-block px-4 py-1 neon-bg text-black font-bold mb-6 skew-x-[-10deg]">PALWAL, HARYANA'S #1 RUNNING ACADEMY</span>
+            <h1 class="text-5xl md:text-8xl font-bold mb-6 leading-tight">
+                STOP RUNNING SLOW.<br><span class="neon-text underline">START DOMINATING.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mb-10">
+                Scientific training for athletes and defense aspirants. We don't just coach; we shave seconds off your timing and build steel stamina.
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 mb-12">
+                <a href="#join" class="neon-bg text-black px-10 py-5 rounded-md font-bold text-xl btn-shadow transition transform hover:scale-105 text-center">
+                    ENROLL FOR FREE TRIAL
+                </a>
+                <a href="#programs" class="border-2 border-white text-white px-10 py-5 rounded-md font-bold text-xl hover:bg-white hover:text-black transition text-center">
+                    VIEW PROGRAMS
+                </a>
             </div>
-          </button> -->
 
-        <!-- <button
-            class="bg-white text-black flex items-center gap-3 px-6 py-3 rounded-xl shadow hover:scale-105 transition"
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-              class="w-6 h-6"
-            />
-            <div class="text-left text-sm">
-              <p class="text-xs">GET IT ON</p>
-              <p class="font-semibold leading-none">Google Play</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-white/10">
+                <div><p class="text-3xl font-bold neon-text">900+</p><p class="text-sm text-gray-400">Athletes Trained</p></div>
+                <div><p class="text-3xl font-bold neon-text">500+</p><p class="text-sm text-gray-400">Army/Police Selections</p></div>
+                <div><p class="text-3xl font-bold neon-text">50+</p><p class="text-sm text-gray-400">State Records</p></div>
+                <div><p class="text-3xl font-bold neon-text">98%</p><p class="text-sm text-gray-400">Success Rate</p></div>
             </div>
-          </button> -->
-      </div>
+        </div>
+    </section>
+
+    <section id="results" class="py-20 bg-zinc-900 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row md:items-center justify-between mb-12">
+            <h2 class="text-4xl font-bold">RESULTS SPEAK <span class="neon-text" style="color: #ccff00;">LOUDER</span></h2>
+            <div class="flex space-x-2 mt-4 md:mt-0">
+                <button onclick="scrollResults('left')" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#ccff00] hover:text-black transition">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="scrollResults('right')" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#ccff00] hover:text-black transition">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="results-slider" class="flex overflow-x-auto gap-8 no-scrollbar scroll-smooth snap-x pb-6" style="scrollbar-width: none; -ms-overflow-style: none;">
+            
+            <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
+                        <img src="" class="w-full h-full object-cover grayscale" alt="Amit">
+                        <!-- <img src="https://i.pravatar.cc/150?u=1" class="w-full h-full object-cover grayscale" alt="Amit"> -->
+                    </div>
+                    <div>
+                        <p class="font-bold uppercase tracking-tight">Amit Kumar</p>
+                        <p class="text-sm text-gray-500">Army Aspirant</p>
+                    </div>
+                </div>
+                <p class="italic text-gray-300">"Improved my 1600m time from 6:10 to 4:55 in just 3 months. Selected in Indian Army!"</p>
+                <div class="mt-4 text-[#ccff00] font-bold">1600m Timing: 4:55s</div>
+            </div>
+
+            <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
+                        <!-- <img src="https://i.pravatar.cc/150?u=2" class="w-full h-full object-cover grayscale" alt="Rahul"> -->
+                        <img src="" class="w-full h-full object-cover grayscale" alt="Rahul">
+                    </div>
+                    <div>
+                        <p class="font-bold uppercase tracking-tight">Rahul Singh</p>
+                        <p class="text-sm text-gray-500">100m Sprinter</p>
+                    </div>
+                </div>
+                <p class="italic text-gray-300">"The scientific warmup and explosive training here is world-class. Gained massive speed."</p>
+                <div class="mt-4 text-[#ccff00] font-bold">Champion - State Meet</div>
+            </div>
+
+            <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
+                        <!-- <img src="https://i.pravatar.cc/150?u=3" class="w-full h-full object-cover grayscale" alt="Priya"> -->
+                        <img src="" class="w-full h-full object-cover grayscale" alt="Priya">
+                    </div>
+                    <div>
+                        <p class="font-bold uppercase tracking-tight">Priya Sharma</p>
+                        <p class="text-sm text-gray-500">Fitness Beginner</p>
+                    </div>
+                </div>
+                <p class="italic text-gray-300">"Lost 12kg and completed my first 5km run. The discipline here changed my life."</p>
+                <div class="mt-4 text-[#ccff00] font-bold">Weight Loss: 12KG</div>
+            </div>
+
+            <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
+                        <img src="" class="w-full h-full object-cover grayscale" alt="Vikas">
+                        <!-- <img src="https://i.pravatar.cc/150?u=4" class="w-full h-full object-cover grayscale" alt="Vikas"> -->
+                    </div>
+                    <div>
+                        <p class="font-bold uppercase tracking-tight">Vikas Malik</p>
+                        <p class="text-sm text-gray-500">Police Aspirant</p>
+                    </div>
+                </div>
+                <p class="italic text-gray-300">"Thank You Guru Yogi"</p>
+                <div class="mt-4 text-[#ccff00] font-bold">Selection: Haryana Police</div>
+            </div>
+
+            <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
+                        <!-- <img src="https://i.pravatar.cc/150?u=5" class="w-full h-full object-cover grayscale" alt="Sandeep"> -->
+                        <img src="" class="w-full h-full object-cover grayscale" alt="Sandeep">
+                    </div>
+                    <div>
+                        <p class="font-bold uppercase tracking-tight">Sandeep Hooda</p>
+                        <p class="text-sm text-gray-500">800m Runner</p>
+                    </div>
+                </div>
+                <p class="italic text-gray-300">"Guru Yogi’s focus on stamina and recovery made me a different athlete. 1st place in District."</p>
+                <div class="mt-4 text-[#ccff00] font-bold">Medalist: District Meet</div>
+            </div>
+
+            <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
+                        <!-- <img src="https://i.pravatar.cc/150?u=6" class="w-full h-full object-cover grayscale" alt="Anjali"> -->
+                        <img src="" class="w-full h-full object-cover grayscale" alt="Anjali">
+                    </div>
+                    <div>
+                        <p class="font-bold uppercase tracking-tight">Anjali Rani</p>
+                        <p class="text-sm text-gray-500">Defense Aspirant</p>
+                    </div>
+                </div>
+                <p class="italic text-gray-300">"I thought girls couldn't run long distances. Coach Yogi proved me wrong. Cleared my physicals!"</p>
+                <div class="mt-4 text-[#ccff00] font-bold">Cleared: SSC GD Physical</div>
+            </div>
+
+        </div>
     </div>
-  </section>
+</section>
 
-  <section class="w-full pb-20 px-4">
-    <div class="max-w-5xl mx-auto text-center">
-      <!-- Heading -->
-      <h2 class="text-3xl text-white sm:text-4xl md:text-5xl font-bold">
-        Meet Run Coach
-      </h2>
+    <section id="programs" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 text-center">CHOOSE YOUR <span class="neon-text">MISSION</span></h2>
+            <p class="text-center text-gray-400 mb-12">Batch filling fast. Limited slots for personalized attention.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-zinc-800 rounded-2xl overflow-hidden flex flex-col group hover:scale-105 transition">
+                    <div class="h-48 bg-gray-700 relative">
+                        <img src="images/guide1.avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" alt="Training">
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-2xl font-bold mb-2">Army/Police Prep</h3>
+                        <p class="text-gray-400 text-sm mb-4 italic">For those who want to wear the uniform.</p>
+                        <ul class="text-sm space-y-2 mb-6">
+                            <li><i class="fas fa-check neon-text mr-2"></i> 1600m Specialization</li>
+                            <li><i class="fas fa-check neon-text mr-2"></i> Long Jump/High Jump</li>
+                            <li><i class="fas fa-check neon-text mr-2"></i> Stamina & Discipline</li>
+                        </ul>
+                        <a href="#join" class="block w-full py-3 text-center neon-bg text-black font-bold rounded">ENROLL NOW</a>
+                    </div>
+                </div>
 
-      <!-- Subtitle -->
-      <p class="mt-4 text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-        Meet Guru Yogi, our founder, and learn how Guru Yogi Athletic Academy helps you achieve
-        your goals with expert support
-      </p>
+                <div class="bg-zinc-800 rounded-2xl overflow-hidden flex flex-col group hover:scale-105 transition border-2 border-[#ccff00]">
+                    <div class="h-48 bg-gray-700 relative">
+                        <img src="images/guide2.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" alt="Sprints">
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <div class="absolute top-2 right-2 neon-bg text-black text-[10px] px-2 py-1 font-bold">POPULAR</div>
+                        <h3 class="text-2xl font-bold mb-2">Advanced Athlete</h3>
+                        <p class="text-gray-400 text-sm mb-4 italic">100m to 10km competitive training.</p>
+                        <ul class="text-sm space-y-2 mb-6">
+                            <li><i class="fas fa-check neon-text mr-2"></i> Speed Mechanics</li>
+                            <li><i class="fas fa-check neon-text mr-2"></i> Race Strategy</li>
+                            <li><i class="fas fa-check neon-text mr-2"></i> Competition Prep</li>
+                        </ul>
+                        <a href="#join" class="block w-full py-3 text-center neon-bg text-black font-bold rounded">ENROLL NOW</a>
+                    </div>
+                </div>
 
-      <!-- Video Card -->
-      <div class="mt-14 flex justify-center">
-        <div class="relative w-[260px] sm:w-[300px] md:w-[340px] aspect-[3/5] rounded-3xl overflow-hidden shadow-xl">
-          <!-- Background -->
-          <div class="absolute inset-0 bg-gradient-to-b from-[#0b4aa2] to-[#0a2d63]"></div>
+                <div class="bg-zinc-800 rounded-2xl overflow-hidden flex flex-col group hover:scale-105 transition">
+                    <div class="h-48 bg-gray-700 relative">
+                        <img src="images/guide3.avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" alt="Beginners">
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-2xl font-bold mb-2">Beginner Run</h3>
+                        <p class="text-gray-400 text-sm mb-4 italic">Start from zero to your first 5km.</p>
+                        <ul class="text-sm space-y-2 mb-6">
+                            <li><i class="fas fa-check neon-text mr-2"></i> Joint Safety & Form</li>
+                            <li><i class="fas fa-check neon-text mr-2"></i> Fat Loss focus</li>
+                            <li><i class="fas fa-check neon-text mr-2"></i> Endurance Building</li>
+                        </ul>
+                        <a href="#join" class="block w-full py-3 text-center neon-bg text-black font-bold rounded">ENROLL NOW</a>
+                    </div>
+                </div>
 
-          <!-- Image -->
-          <img src="/images/img-3.jpg" alt="Guru Yogi" class="relative z-10 w-full h-full object-cover" />
-
-          <!-- Overlay -->
-          <div class="absolute inset-0 bg-black/10 z-20"></div>
-
-          <!-- Play Button -->
-          <!-- <div
-              class="absolute inset-0 z-30 flex flex-col items-center justify-center text-white"
-            >
-              <div
-                class="w-16 h-16 rounded-full border-2 border-white flex items-center justify-center mb-3"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-6 h-6 ml-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M14.752 11.168l-5.197-3.03A1 1 0 008 9.03v5.94a1 1 0 001.555.832l5.197-3.03a1 1 0 000-1.664z"
-                  />
-                </svg>
-              </div>
-            </div> -->
+                <div class="bg-zinc-800 rounded-2xl overflow-hidden flex flex-col group hover:scale-105 transition">
+                    <div class="h-48 bg-gray-700 relative">
+                        <img src="images/guide4.avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" alt="Elite">
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-2xl font-bold mb-2">Personal Coaching</h3>
+                        <p class="text-gray-400 text-sm mb-4 italic">1-on-1 with Guru Yogi.</p>
+                        <ul class="text-sm space-y-2 mb-6">
+                            <li><i class="fas fa-check neon-text mr-2"></i> Personalized Diet</li>
+                            <li><i class="fas fa-check neon-text mr-2"></i> Video Analysis</li>
+                            <li><i class="fas fa-check neon-text mr-2"></i> Elite Performance</li>
+                        </ul>
+                        <a href="#join" class="block w-full py-3 text-center neon-bg text-black font-bold rounded">ENROLL NOW</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="w-full py-20 px-6">
-    <div class="max-w-6xl mx-auto">
-      <!-- Heading -->
-      <h2 class="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight max-w-3xl">
-        Run With a Coach <br class="hidden sm:block" />
-        Who Knows You
-      </h2>
-
-      <!-- Cards -->
-      <div class="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Card 1 -->
-        <div class="bg-[#1e293b] border border-white/5 rounded-3xl p-8 hover:border-orange-500 transition">
-          <div class="mb-6">
-            <svg class="w-8 h-8 text-white/80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-              <line x1="9" y1="9" x2="9.01" y2="9" />
-              <line x1="15" y1="9" x2="15.01" y2="9" />
-            </svg>
-          </div>
-          <h3 class="text-white text-lg font-semibold">
-            24/7 Personal Support
-          </h3>
-          <p class="mt-3 text-gray-400 text-sm leading-relaxed">
-            Get instant guidance whenever you need it — questions, feedback,
-            or motivation.
-          </p>
+    <section class="py-20 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-8">WHY TRAIN AT <span class="neon-text">GURU YOGI ACADEMY?</span></h2>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="p-3 bg-zinc-800 rounded-lg mr-4"><i class="fas fa-trophy neon-text text-2xl"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold">Scientific Methodology</h4>
+                            <p class="text-gray-400">We use VO2 max optimization and stride frequency analysis, not just random running.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="p-3 bg-zinc-800 rounded-lg mr-4"><i class="fas fa-utensils neon-text text-2xl"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold">Nutrition & Recovery</h4>
+                            <p class="text-gray-400">Diet plans that fuel performance and recovery protocols to prevent injuries.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="p-3 bg-zinc-800 rounded-lg mr-4"><i class="fas fa-map-marker-alt neon-text text-2xl"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold">Professional Synthetic Track</h4>
+                            <p class="text-gray-400">Train on high-quality surfaces used by pro athletes in Haryana.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <img src="/images/img-3.jpg" class="rounded-2xl shadow-2xl" alt="Training track">
+                <div class="absolute -bottom-6 -right-6 bg-white text-black p-6 rounded-xl font-black italic">
+                    HARD WORK<br>BEATS TALENT.
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Card 2 -->
-        <div class="bg-[#1e293b] border border-white/5 rounded-3xl p-8 hover:border-orange-500 transition""
-          >
-            <div class=" mb-6">
-          <svg class="w-8 h-8 text-white/80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4z" />
-            <path d="M6 20v-1c0-2 4-3 6-3s6 1 6 3v1" />
-            <path d="M20 7l-4 4" />
-          </svg>
+    <section id="coach" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-12 items-center">
+            <div class="w-full md:w-1/2">
+                <div class="aspect-square bg-zinc-800 rounded-2xl overflow-hidden relative border-4 border-[#ccff00]">
+                    <img src="/images/IMG-20230321-WA0004.jpg" class="w-full h-full object-cover" alt="Coach Guru Yogi">
+                </div>
+            </div>
+            <div class="w-full md:w-1/2">
+                <h2 class="text-5xl font-bold mb-6">COACH <span class="neon-text">GURU YOGI</span></h2>
+                <p class="text-2xl italic mb-6 text-gray-300">"Your limits are only in your mind. I am here to break them."</p>
+                <p class="text-gray-400 mb-8 leading-relaxed">
+                    With over 15 years of experience in middle and long-distance running, Coach Yogi has transformed 500+ students from beginners into competitive athletes. Having trained under international standards, he brings a disciplined, result-oriented approach to the Haryana running community.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-zinc-800 p-4 rounded-lg">
+                        <p class="font-bold text-[#ccff00]">Certified</p>
+                        <p class="text-sm">Athletics Coach</p>
+                    </div>
+                    <div class="bg-zinc-800 p-4 rounded-lg">
+                        <p class="font-bold text-[#ccff00]">National Coach</p>
+                        <p class="text-sm">Trainer</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h3 class="text-white text-lg font-semibold">
-          Smart Performance Tracking
-        </h3>
-        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
-          We analyze your progress in real-time and fine-tune your training
-          for maximum results.
-        </p>
-      </div>
+    </section>
 
-      <!-- Card 3 -->
-      <div class="bg-[#1e293b] border border-white/5 rounded-3xl p-8 hover:border-orange-500 transition">
-        <div class="mb-6">
-          <svg class="w-8 h-8 text-white/80" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M12 20v-6" />
-            <path d="M12 4v2" />
-            <path d="M4 12h2" />
-            <path d="M18 12h2" />
-            <circle cx="12" cy="12" r="4" />
-          </svg>
+    
+
+    <section id="pricing" class="py-20 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-16 underline decoration-[#ccff00] underline-offset-8">JOIN THE SQUAD</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-black p-8 rounded-2xl border border-white/10 hover:border-[#ccff00] transition">
+                    <h3 class="text-xl mb-4">Monthly Basic</h3>
+                    <div class="text-4xl font-bold mb-6">₹1,999<span class="text-sm text-gray-500">/mo</span></div>
+                    <ul class="text-left space-y-3 mb-8 text-gray-400">
+                        <li><i class="fas fa-check mr-2 neon-text"></i> Daily Morning Running</li>
+                        <li><i class="fas fa-check mr-2 neon-text"></i> Daily Evening Running</li>
+                        <li><i class="fas fa-check mr-2 neon-text"></i> Providing Personal Training</li>
+                        <!-- <li><i class="fas fa-check mr-2 neon-text"></i> Weekly Time</li> -->
+                    </ul>
+                    <a href="#join" class="block w-full py-3 border border-white rounded font-bold hover:bg-white hover:text-black">SELECT PLAN</a>
+                </div>
+                <div class="bg-black p-8 rounded-2xl border-2 border-[#ccff00] relative scale-105">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 neon-bg text-black px-4 py-1 text-sm font-bold rounded-full">BEST VALUE</div>
+                    <h3 class="text-xl mb-4">3-Month Program</h3>
+                    <div class="text-4xl font-bold mb-6">₹4,999<span class="text-sm text-gray-500">/3 mo</span></div>
+                    <ul class="text-left space-y-3 mb-8 text-gray-400">
+                        <li><i class="fas fa-check mr-2 neon-text"></i> Personalized Diet Plan</li>
+                        <!-- <li><i class="fas fa-check mr-2 neon-text"></i> Defense Mock Tests</li> -->
+                        <li><i class="fas fa-check mr-2 neon-text"></i> Guru Yogi's Special Kit</li>
+                        <li><i class="fas fa-check mr-2 neon-text"></i> 24/7 WhatsApp Support</li>
+                    </ul>
+                    <a href="#join" class="block w-full py-3 neon-bg text-black rounded font-bold hover:opacity-90">JOIN NOW</a>
+                </div>
+                <div class="bg-black p-8 rounded-2xl border border-white/10 hover:border-[#ccff00] transition">
+                    <h3 class="text-xl mb-4">Trial Pack</h3>
+                    <div class="text-4xl font-bold mb-6">FREE<span class="text-sm text-gray-500">/3 days</span></div>
+                    <ul class="text-left space-y-3 mb-8 text-gray-400">
+                        <li><i class="fas fa-check mr-2 neon-text"></i> Experience the Vibe</li>
+                        <li><i class="fas fa-check mr-2 neon-text"></i> Meet the Coach</li>
+                        <li><i class="fas fa-check mr-2 neon-text"></i> Performance Audit</li>
+                    </ul>
+                    <a href="#join" class="block w-full py-3 border border-white rounded font-bold hover:bg-white hover:text-black">BOOK TRIAL</a>
+                </div>
+            </div>
         </div>
-        <h3 class="text-white text-lg font-semibold">
-          Goal-Focused Planning
-        </h3>
-        <p class="mt-3 text-gray-400 text-sm leading-relaxed">
-          Structured strategies designed to help you peak at the right time
-          and win your race.
-        </p>
-      </div>
-    </div>
+    </section>
 
-    <!-- CTA Banner -->
-    <div class="w-full py-20 px-6">
-      <div class="max-w-6xl mx-auto bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl p-10 text-center">
-        <h3 class="text-3xl font-bold text-white">Ready for A 20% improvement?</h3>
-        <p class="mt-3 text-white/90">
-          Premium customers improve finish times by 20%.
-        </p>
-        <button class="mt-6 bg-white text-black px-8 py-3 rounded-full font-medium hover:scale-105 transition">
-          Start Now
-        </button>
-      </div>
-    </div>
-    </div>
-  </section>
-
-  <section class="w-full bg-[#0f172a] py-16 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="rounded-3xl overflow-hidden">
-        <img src="/images/IMG-20230321-WA0004.jpg" alt="Runcoach Runners"
-          class="w-full h-[220px] sm:h-[400px] md:h-[450px] lg:h-[600px] object-cover" />
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-[#0f172a] py-20 px-6 text-white">
-    <div class="max-w-6xl mx-auto">
-      <!-- Heading -->
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold max-w-3xl leading-tight">
-        Your Running Transformation <br class="hidden sm:block" />
-        Starts Today
-      </h2>
-
-      <!-- Grid -->
-      <div class="mt-16 grid gap-8 md:grid-cols-2">
-        <!-- Step 1 -->
-        <div class="bg-[#1e293b] border border-white/5 rounded-3xl p-8 hover:border-orange-500 transition">
-          <div
-            class="w-12 h-12 rounded-full border border-white/40 flex items-center justify-center text-lg font-semibold">
-            1
-          </div>
-          <h3 class="mt-6 text-xl font-semibold">Tell Us About Your Goals</h3>
-          <p class="mt-3 text-gray-400 text-sm leading-relaxed">
-            Share your experience level, race goals, and schedule. We analyze
-            your profile to understand exactly what you need.
-          </p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="bg-[#1e293b] border border-white/5 rounded-3xl p-8 hover:border-orange-500 transition">
-          <div
-            class="w-12 h-12 rounded-full border border-white/40 flex items-center justify-center text-lg font-semibold">
-            2
-          </div>
-          <h3 class="mt-6 text-xl font-semibold">
-            Get a Custom Training Plan
-          </h3>
-          <p class="mt-3 text-gray-400 text-sm leading-relaxed">
-            Your dedicated coach builds a personalized weekly training
-            schedule designed to improve endurance, speed, and recovery.
-          </p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="bg-[#1e293b] border border-white/5 rounded-3xl p-8 hover:border-orange-500 transition">
-          <div
-            class="w-12 h-12 rounded-full border border-white/40 flex items-center justify-center text-lg font-semibold">
-            3
-          </div>
-          <h3 class="mt-6 text-xl font-semibold">Train Smarter Every Week</h3>
-          <p class="mt-3 text-gray-400 text-sm leading-relaxed">
-            Log your runs, receive performance insights, and get real-time
-            feedback so you’re always progressing safely.
-          </p>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="bg-[#1e293b] border border-white/5 rounded-3xl p-8 hover:border-orange-500 transition">
-          <div
-            class="w-12 h-12 rounded-full border border-white/40 flex items-center justify-center text-lg font-semibold">
-            4
-          </div>
-          <h3 class="mt-6 text-xl font-semibold">
-            Achieve Your Personal Best
-          </h3>
-          <p class="mt-3 text-gray-400 text-sm leading-relaxed">
-            With consistent coaching support and strategy adjustments, you
-            reach new milestones and crush your race goals.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bg-[#0f172a] py-16 overflow-hidden">
+    <section class="bg-zinc-900 py-16 overflow-hidden">
     <div class="relative w-full">
       <!-- Scrolling Wrapper -->
       <div class="flex gap-6 animate-scroll">
@@ -484,231 +521,95 @@
     </div>
   </section>
 
-  <section class="bg-[#0f172a] text-white py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-
-      <!-- Heading -->
-      <div class="grid md:grid-cols-2 gap-12 mb-16">
-        <div>
-          <h2 class="text-5xl font-bold leading-tight">
-            Still Curious?<br />
-            We've Got You Covered.
-          </h2>
+    <section id="join" class="py-20 px-4 bg-black">
+    <div class="max-w-5xl mx-auto bg-zinc-900 rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+        <div class="w-full md:w-1/2 p-12 bg-[#ccff00] text-black">
+            <h2 class="text-5xl font-black leading-none mb-6">STOP DREAMING.<br>START TRAINING.</h2>
+            <p class="text-xl font-bold mb-8">The next batch starts on Monday. Hurry up only few spots left.</p>
+            <div class="space-y-4 font-bold">
+                <p><i class="fas fa-map-marker-alt mr-2"></i> SD College, Palwal, Haryana</p>
+                <p><i class="fas fa-phone mr-2"></i> +91 8683861820</p>
+            </div>
         </div>
-        <div class="flex items-center">
-          <p class="text-gray-400 text-lg">
-            Everything you need to know about our coaching, plans, and support.
-          </p>
+        <div class="w-full md:w-1/2 p-12">
+            <form action="https://formspree.io/f/mlgopygo" method="POST" class="space-y-4">
+                <div>
+                    <label class="block text-sm mb-1 uppercase font-bold text-gray-400">Full Name</label>
+                    <input type="text" name="name" required class="w-full bg-zinc-800 border border-zinc-700 rounded p-3 focus:outline-none focus:border-[#ccff00] text-white" placeholder="Enter name">
+                </div>
+                <div>
+                    <label class="block text-sm mb-1 uppercase font-bold text-gray-400">Phone (WhatsApp)</label>
+                    <input type="tel" name="phone" required class="w-full bg-zinc-800 border border-zinc-700 rounded p-3 focus:outline-none focus:border-[#ccff00] text-white" placeholder="Enter mobile number">
+                </div>
+                <div>
+                    <label class="block text-sm mb-1 uppercase font-bold text-gray-400">Select Goal</label>
+                    <select name="goal" class="w-full bg-zinc-800 border border-zinc-700 rounded p-3 focus:outline-none focus:border-[#ccff00] text-white">
+                        <option value="Army Physical">Indian Army Physical</option>
+                        <option value="Police Test">State Police Test</option>
+                        <option value="Professional Sprints">Professional Sprints</option>
+                        <option value="Fitness">Weight Loss / General Fitness</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-[#ccff00] text-black font-black py-4 rounded uppercase text-lg mt-4 hover:tracking-widest transition-all">
+                    SEND MY APPLICATION
+                </button>
+                <p class="text-[10px] text-center text-gray-600 mt-2">By clicking, you agree to start your transformation journey.</p>
+            </form>
         </div>
-      </div>
-
-      <!-- FAQ Items -->
-      <div class="space-y-6">
-
-        <!-- Item -->
-        <div class="faq-item border border-white/20 rounded-2xl p-6 cursor-pointer transition">
-          <div class="flex justify-between items-center">
-            <h3 class="text-lg font-semibold">
-              How personalized is the training plan?
-            </h3>
-            <span class="text-2xl transition-transform duration-300">+</span>
-          </div>
-          <div class="faq-content max-h-0 overflow-hidden transition-all duration-500">
-            <p class="text-gray-400 mt-4">
-              Every plan is tailored to your fitness level, goals, schedule, and progress data to ensure optimal
-              performance and recovery.
-            </p>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="faq-item border border-white/20 rounded-2xl p-6 cursor-pointer transition">
-          <div class="flex justify-between items-center">
-            <h3 class="text-lg font-semibold">
-              Can I adjust my training schedule anytime?
-            </h3>
-            <span class="text-2xl transition-transform duration-300">+</span>
-          </div>
-          <div class="faq-content max-h-0 overflow-hidden transition-all duration-500">
-            <p class="text-gray-400 mt-4">
-              Yes. You can modify your weekly schedule and the system will intelligently rebalance your sessions.
-            </p>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="faq-item border border-white/20 rounded-2xl p-6 cursor-pointer transition">
-          <div class="flex justify-between items-center">
-            <h3 class="text-lg font-semibold">
-              Do you provide injury prevention guidance?
-            </h3>
-            <span class="text-2xl transition-transform duration-300">+</span>
-          </div>
-          <div class="faq-content max-h-0 overflow-hidden transition-all duration-500">
-            <p class="text-gray-400 mt-4">
-              Absolutely. We include recovery strategies, mobility work, and smart load management to reduce injury
-              risk.
-            </p>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="faq-item border border-white/20 rounded-2xl p-6 cursor-pointer transition">
-          <div class="flex justify-between items-center">
-            <h3 class="text-lg font-semibold">
-              Is there a free trial available?
-            </h3>
-            <span class="text-2xl transition-transform duration-300">+</span>
-          </div>
-          <div class="faq-content max-h-0 overflow-hidden transition-all duration-500">
-            <p class="text-gray-400 mt-4">
-              Yes, you can explore the platform with a limited free trial before committing to a subscription.
-            </p>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="faq-item border border-white/20 rounded-2xl p-6 cursor-pointer transition">
-          <div class="flex justify-between items-center">
-            <h3 class="text-lg font-semibold">
-              What support channels are available?
-            </h3>
-            <span class="text-2xl transition-transform duration-300">+</span>
-          </div>
-          <div class="faq-content max-h-0 overflow-hidden transition-all duration-500">
-            <p class="text-gray-400 mt-4">
-              We offer in-app chat, email support, and regular check-ins to keep you on track.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
     </div>
-  </section>
+</section>
 
-
-
-  <footer class="bg-[#0f172a] border-t border-white/5 text-gray-300 pt-20 pb-10 px-6">
-    <div class="max-w-6xl mx-auto">
-
-      <!-- Top Grid -->
-      <div class="grid md:grid-cols-4 gap-12 mb-16">
-
-        <!-- Explore -->
-        <div>
-          <h4 class="text-white font-semibold mb-6">Explore</h4>
-          <ul class="space-y-4">
-            <li><a href="#" class="hover:text-orange-500 transition">Home</a></li>
-            <li><a href="#" class="hover:text-orange-500 transition">Programs</a></li>
-            <li><a href="#" class="hover:text-orange-500 transition">Pricing</a></li>
-          </ul>
+    <footer class="py-12 border-t border-white/10 text-center">
+        <div class="mb-8">
+            <a href="https://www.instagram.com/guru_yogi_athletic_academy_pal/" target="_blank" class="mx-3 text-xl hover:text-[#ccff00] transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="mx-3 text-xl hover:text-[#ccff00] transition" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/channel/UCWp7C8-i5M7KE3KScx8gtOA" target="_blank" class="mx-3 text-xl hover:text-[#ccff00] transition"><i class="fab fa-youtube"></i></a>
         </div>
+        <p id="copyright" class="text-gray-500 text-sm"></p>
+    </footer>
 
-        <!-- Support -->
-        <div>
-          <h4 class="text-white font-semibold mb-6">Support</h4>
-          <ul class="space-y-4">
-            <li><a href="#" class="hover:text-orange-500 transition">Contact Us</a></li>
-            <li><a href="#" class="hover:text-orange-500 transition">Terms & Conditions</a></li>
-            <li><a href="#" class="hover:text-orange-500 transition">Privacy Policy</a></li>
-          </ul>
-        </div>
-
-        <!-- Follow Us -->
-        <div>
-          <h4 class="text-white font-semibold mb-6">Follow Us</h4>
-          <ul class="space-y-4">
-            <li><a href="https://www.youtube.com/channel/UCWp7C8-i5M7KE3KScx8gtOA" target="_blank" class="hover:text-orange-500 transition">YouTube</a></li>
-            <li><a href="https://www.instagram.com/guru_yogi_athletic_academy_pal/" target="_blank" class="hover:text-orange-500 transition">Instagram</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div>
-          <h4 class="text-white font-semibold mb-6">Connect With Us</h4>
-          <ul class="space-y-4 text-sm">
-            <li>Email: guruyogiathleticacademy.com</li>
-            <li>Phone: +91 8683861820</li>
-            <li>
-              Alawalpur Chowk<br>
-              SD College<br>
-              Palwal Haryana, 121102
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Divider Section -->
-      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-
-        <!-- Logo -->
-        <div class="flex items-center">
-          <img src="/images/logo.png" alt="Guru Yogi Athletic Academy Logo" class="h-20 w-auto object-contain" />
-        </div>
-
-        <!-- Company -->
-        <div class="text-sm text-gray-400 text-center">
-          Guru Yogi Athletic Academy Pvt. Ltd.
-        </div>
-
-        <!-- Copyright -->
-        <div class="text-sm text-gray-500 text-center">
-          © 2026 All rights reserved.
-        </div>
-
-      </div>
-
-    </div>
-  </footer>
-
-
-
-
-  <script>
-    feather.replace();
-
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-
-    const items = document.querySelectorAll(".faq-item");
-
-    items.forEach(item => {
-      item.addEventListener("click", () => {
-
-        const content = item.querySelector(".faq-content");
-        const icon = item.querySelector("span");
-
-        // Close others
-        document.querySelectorAll(".faq-content").forEach(c => {
-          if (c !== content) {
-            c.style.maxHeight = null;
-          }
+    <script>
+        // Smooth scroll for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
+        document.getElementById("copyright").innerHTML =
+  `© ${new Date().getFullYear()} Guru Yogi Athletic Academy. No excuses, just results.`;
 
-        document.querySelectorAll(".faq-item span").forEach(i => {
-          if (i !== icon) {
-            i.textContent = "+";
-          }
-        });
+  const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
 
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-          icon.textContent = "+";
+    function toggleMenu() {
+        // Toggle the slide-in class (Removes translate-x-full to show menu)
+        mobileMenu.classList.toggle('translate-x-full');
+        
+        // Change icon and handle body scroll
+        if (mobileMenu.classList.contains('translate-x-full')) {
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+            document.body.style.overflow = 'auto'; 
         } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-          icon.textContent = "−";
+            menuIcon.classList.replace('fa-bars', 'fa-times');
+            document.body.style.overflow = 'hidden'; // Stop background from scrolling
         }
+    }
 
-      });
-    });
-  </script>
+    menuBtn.addEventListener('click', toggleMenu);
 
+    function scrollResults(direction) {
+        const slider = document.getElementById('results-slider');
+        const scrollAmount = slider.clientWidth * 0.8; // Scroll about 80% of the visible area
+        if (direction === 'left') {
+            slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        } else {
+            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    }
+    </script>
 </body>
-
 </html>
