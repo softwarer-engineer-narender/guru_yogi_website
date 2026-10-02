@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,42 +9,67 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Oswald:wght@500;700&display=swap');
-        
-        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #ffffff; }
-        h1, h2, h3, .sporty { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
-        
-        .neon-border { border: 1px solid #ccff00; }
-        .neon-bg { background-color: #ccff00; }
-        .neon-text { color: #ccff00; }
-        .btn-shadow:hover { box-shadow: 0 0 20px rgba(204, 255, 0, 0.4); }
-        
-        .gradient-overlay {
-            background: linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(10,10,10,0.4) 100%);
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
         }
-         @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
 
-    100% {
-      transform: translateX(-50%);
-    }
-  }
+        h1,
+        h2,
+        h3,
+        .sporty {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
 
-  .animate-scroll {
-    animation: scroll 25s linear infinite;
-    width: max-content;
-  }
+        .neon-border {
+            border: 1px solid #ccff00;
+        }
 
-  #results-slider::-webkit-scrollbar {
-        display: none;
-    }
+        .neon-bg {
+            background-color: #ccff00;
+        }
+
+        .neon-text {
+            color: #ccff00;
+        }
+
+        .btn-shadow:hover {
+            box-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(0deg, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0.4) 100%);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-scroll {
+            animation: scroll 25s linear infinite;
+            width: max-content;
+        }
+
+        #results-slider::-webkit-scrollbar {
+            display: none;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="fixed bottom-0 left-0 w-full z-50 grid grid-cols-2 md:hidden">
-        <a href="https://wa.me/8683861820" class="bg-green-600 text-white py-4 flex items-center justify-center font-bold">
+        <a href="https://wa.me/8683861820"
+            class="bg-green-600 text-white py-4 flex items-center justify-center font-bold">
             <i class="fab fa-whatsapp mr-2"></i> WHATSAPP
         </a>
         <a href="#join" class="neon-bg text-black py-4 flex items-center justify-center font-bold">
@@ -52,42 +78,51 @@
     </div>
 
     <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative z-50">
-        <div class="text-2xl font-bold tracking-tighter uppercase leading-none">
-            GURU <span class="neon-text" style="color: #ccff00;">YOGI</span> 
-            <span class="text-[10px] font-light block tracking-widest text-gray-400">ATHLETIC ACADEMY</span>
-        </div>
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative z-50">
+            <div class="text-2xl font-bold tracking-tighter uppercase leading-none">
+                GURU <span class="neon-text" style="color: #ccff00;">YOGI</span>
+                <span class="text-[10px] font-light block tracking-widest text-gray-400">ATHLETIC ACADEMY</span>
+            </div>
 
-        <div class="hidden md:flex space-x-8 font-bold text-sm tracking-widest uppercase">
-            <a href="/" class="hover:text-[#ccff00] transition">Home</a>
-            <a href="/about-us.html" class="hover:text-[#ccff00] transition">About Us</a>
-            <a href="#programs" class="hover:text-[#ccff00] transition">Programs</a>
-            <!-- <a href="#results" class="hover:text-[#ccff00] transition">Success Stories</a> -->
-            <a href="#coach" class="hover:text-[#ccff00] transition">The Coach</a>
-        </div>
+            <div class="hidden md:flex space-x-8 font-bold text-sm tracking-widest uppercase">
+                <a href="/" class="hover:text-[#ccff00] transition">Home</a>
+                <a href="/about-us.html" class="hover:text-[#ccff00] transition">About Us</a>
+                <a href="#programs" class="hover:text-[#ccff00] transition">Programs</a>
+                <a href="#cleared" class="hover:text-[#ccff00] transition">Selections</a>
+                <!-- <a href="#results" class="hover:text-[#ccff00] transition">Success Stories</a> -->
+                <a href="#coach" class="hover:text-[#ccff00] transition">The Coach</a>
+            </div>
 
-        <a href="tel:+918683861820" class="hidden md:block border border-[#ccff00] text-[#ccff00] px-6 py-2 rounded-full font-bold hover:bg-[#ccff00] hover:text-black transition text-sm">
-            <i class="fas fa-phone-alt mr-2"></i> CALL NOW
-        </a>
-
-        <button id="menu-btn" class="md:hidden text-[#ccff00] focus:outline-none p-2">
-            <i class="fas fa-bars text-2xl" id="menu-icon"></i>
-        </button>
-    </div>
-
-    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen bg-black translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col items-center justify-center space-y-10 md:hidden">
-        <a href="/about-us.html" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]" onclick="toggleMenu()">About Us</a>
-        <a href="#programs" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]" onclick="toggleMenu()">Programs</a>
-        <!-- <a href="#results" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]" onclick="toggleMenu()">Success Stories</a> -->
-        <a href="#coach" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]" onclick="toggleMenu()">The Coach</a>
-        
-        <div class="pt-6">
-            <a href="tel:+918683861820" class="bg-[#ccff00] text-black px-10 py-4 rounded-full font-black uppercase text-lg shadow-[0_0_20px_rgba(204,255,0,0.3)]">
-                <i class="fas fa-phone-alt mr-2"></i> Call Now
+            <a href="tel:+918683861820"
+                class="hidden md:block border border-[#ccff00] text-[#ccff00] px-6 py-2 rounded-full font-bold hover:bg-[#ccff00] hover:text-black transition text-sm">
+                <i class="fas fa-phone-alt mr-2"></i> CALL NOW
             </a>
+
+            <button id="menu-btn" class="md:hidden text-[#ccff00] focus:outline-none p-2">
+                <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+            </button>
         </div>
-    </div>
-</nav>
+
+        <div id="mobile-menu"
+            class="fixed top-0 left-0 w-full h-screen bg-black translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col items-center justify-center space-y-10 md:hidden">
+            <a href="/about-us.html" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]"
+                onclick="toggleMenu()">About Us</a>
+            <a href="#programs" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]"
+                onclick="toggleMenu()">Programs</a>
+            <a href="#cleared" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]"
+                onclick="toggleMenu()">Selections</a>
+            <!-- <a href="#results" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]" onclick="toggleMenu()">Success Stories</a> -->
+            <a href="#coach" class="text-3xl font-bold uppercase tracking-[4px] text-white hover:text-[#ccff00]"
+                onclick="toggleMenu()">The Coach</a>
+
+            <div class="pt-6">
+                <a href="tel:+918683861820"
+                    class="bg-[#ccff00] text-black px-10 py-4 rounded-full font-black uppercase text-lg shadow-[0_0_20px_rgba(204,255,0,0.3)]">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </nav>
 
     <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div class="absolute inset-0 z-0">
@@ -96,151 +131,178 @@
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 py-20 text-center md:text-left">
-            <span class="inline-block px-4 py-1 neon-bg text-black font-bold mb-6 skew-x-[-10deg]">PALWAL, HARYANA'S #1 RUNNING ACADEMY</span>
+            <span class="inline-block px-4 py-1 neon-bg text-black font-bold mb-6 skew-x-[-10deg]">PALWAL, HARYANA'S #1
+                RUNNING ACADEMY</span>
             <h1 class="text-5xl md:text-8xl font-bold mb-6 leading-tight">
                 STOP RUNNING SLOW.<br><span class="neon-text underline">START DOMINATING.</span>
             </h1>
             <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mb-10">
-                Scientific training for athletes and defense aspirants. We don't just coach; we shave seconds off your timing and build steel stamina.
+                Scientific training for athletes and defense aspirants. We don't just coach; we shave seconds off your
+                timing and build steel stamina.
             </p>
-            
+
             <div class="flex flex-col md:flex-row gap-4 mb-12">
-                <a href="#join" class="neon-bg text-black px-10 py-5 rounded-md font-bold text-xl btn-shadow transition transform hover:scale-105 text-center">
+                <a href="#join"
+                    class="neon-bg text-black px-10 py-5 rounded-md font-bold text-xl btn-shadow transition transform hover:scale-105 text-center">
                     ENROLL FOR FREE TRIAL
                 </a>
-                <a href="#programs" class="border-2 border-white text-white px-10 py-5 rounded-md font-bold text-xl hover:bg-white hover:text-black transition text-center">
+                <a href="#programs"
+                    class="border-2 border-white text-white px-10 py-5 rounded-md font-bold text-xl hover:bg-white hover:text-black transition text-center">
                     VIEW PROGRAMS
                 </a>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-white/10">
-                <div><p class="text-3xl font-bold neon-text">900+</p><p class="text-sm text-gray-400">Athletes Trained</p></div>
-                <div><p class="text-3xl font-bold neon-text">500+</p><p class="text-sm text-gray-400">Army/Police Selections</p></div>
-                <div><p class="text-3xl font-bold neon-text">50+</p><p class="text-sm text-gray-400">State Records</p></div>
-                <div><p class="text-3xl font-bold neon-text">98%</p><p class="text-sm text-gray-400">Success Rate</p></div>
+                <div>
+                    <p class="text-3xl font-bold neon-text">900+</p>
+                    <p class="text-sm text-gray-400">Athletes Trained</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold neon-text">1050+</p>
+                    <p class="text-sm text-gray-400">Army/Police Selections</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold neon-text">50+</p>
+                    <p class="text-sm text-gray-400">State Records</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold neon-text">98%</p>
+                    <p class="text-sm text-gray-400">Success Rate</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="results" class="py-20 bg-zinc-900 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="flex flex-col md:flex-row md:items-center justify-between mb-12">
-            <h2 class="text-4xl font-bold">RESULTS SPEAK <span class="neon-text" style="color: #ccff00;">LOUDER</span></h2>
-            <div class="flex space-x-2 mt-4 md:mt-0">
-                <button onclick="scrollResults('left')" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#ccff00] hover:text-black transition">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button onclick="scrollResults('right')" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#ccff00] hover:text-black transition">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-12">
+                <h2 class="text-4xl font-bold">RESULTS SPEAK <span class="neon-text"
+                        style="color: #ccff00;">LOUDER</span></h2>
+                <div class="flex space-x-2 mt-4 md:mt-0">
+                    <button onclick="scrollResults('left')"
+                        class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#ccff00] hover:text-black transition">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button onclick="scrollResults('right')"
+                        class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#ccff00] hover:text-black transition">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="results-slider" class="flex overflow-x-auto gap-8 no-scrollbar scroll-smooth snap-x pb-6"
+                style="scrollbar-width: none; -ms-overflow-style: none;">
+
+                <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
+                            <img src="" class="w-full h-full object-cover grayscale" alt="Amit">
+                            <!-- <img src="https://i.pravatar.cc/150?u=1" class="w-full h-full object-cover grayscale" alt="Amit"> -->
+                        </div>
+                        <div>
+                            <p class="font-bold uppercase tracking-tight">Amit Kumar</p>
+                            <p class="text-sm text-gray-500">Army Aspirant</p>
+                        </div>
+                    </div>
+                    <p class="italic text-gray-300">"Improved my 1600m time from 6:10 to 4:55 in just 3 months. Selected
+                        in Indian Army!"</p>
+                    <div class="mt-4 text-[#ccff00] font-bold">1600m Timing: 4:55s</div>
+                </div>
+
+                <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
+                            <!-- <img src="https://i.pravatar.cc/150?u=2" class="w-full h-full object-cover grayscale" alt="Rahul"> -->
+                            <img src="" class="w-full h-full object-cover grayscale" alt="Rahul">
+                        </div>
+                        <div>
+                            <p class="font-bold uppercase tracking-tight">Rahul Singh</p>
+                            <p class="text-sm text-gray-500">100m Sprinter</p>
+                        </div>
+                    </div>
+                    <p class="italic text-gray-300">"The scientific warmup and explosive training here is world-class.
+                        Gained massive speed."</p>
+                    <div class="mt-4 text-[#ccff00] font-bold">Champion - State Meet</div>
+                </div>
+
+                <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
+                            <!-- <img src="https://i.pravatar.cc/150?u=3" class="w-full h-full object-cover grayscale" alt="Priya"> -->
+                            <img src="" class="w-full h-full object-cover grayscale" alt="Priya">
+                        </div>
+                        <div>
+                            <p class="font-bold uppercase tracking-tight">Priya Sharma</p>
+                            <p class="text-sm text-gray-500">Fitness Beginner</p>
+                        </div>
+                    </div>
+                    <p class="italic text-gray-300">"Lost 12kg and completed my first 5km run. The discipline here
+                        changed my life."</p>
+                    <div class="mt-4 text-[#ccff00] font-bold">Weight Loss: 12KG</div>
+                </div>
+
+                <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
+                            <img src="" class="w-full h-full object-cover grayscale" alt="Vikas">
+                            <!-- <img src="https://i.pravatar.cc/150?u=4" class="w-full h-full object-cover grayscale" alt="Vikas"> -->
+                        </div>
+                        <div>
+                            <p class="font-bold uppercase tracking-tight">Vikas Malik</p>
+                            <p class="text-sm text-gray-500">Police Aspirant</p>
+                        </div>
+                    </div>
+                    <p class="italic text-gray-300">"Thank You Guru Yogi"</p>
+                    <div class="mt-4 text-[#ccff00] font-bold">Selection: Haryana Police</div>
+                </div>
+
+                <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
+                            <!-- <img src="https://i.pravatar.cc/150?u=5" class="w-full h-full object-cover grayscale" alt="Sandeep"> -->
+                            <img src="" class="w-full h-full object-cover grayscale" alt="Sandeep">
+                        </div>
+                        <div>
+                            <p class="font-bold uppercase tracking-tight">Sandeep Hooda</p>
+                            <p class="text-sm text-gray-500">800m Runner</p>
+                        </div>
+                    </div>
+                    <p class="italic text-gray-300">"Guru Yogi’s focus on stamina and recovery made me a different
+                        athlete. 1st place in District."</p>
+                    <div class="mt-4 text-[#ccff00] font-bold">Medalist: District Meet</div>
+                </div>
+
+                <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
+                            <!-- <img src="https://i.pravatar.cc/150?u=6" class="w-full h-full object-cover grayscale" alt="Anjali"> -->
+                            <img src="" class="w-full h-full object-cover grayscale" alt="Anjali">
+                        </div>
+                        <div>
+                            <p class="font-bold uppercase tracking-tight">Anjali Rani</p>
+                            <p class="text-sm text-gray-500">Defense Aspirant</p>
+                        </div>
+                    </div>
+                    <p class="italic text-gray-300">"I thought girls couldn't run long distances. Coach Yogi proved me
+                        wrong. Cleared my physicals!"</p>
+                    <div class="mt-4 text-[#ccff00] font-bold">Cleared: SSC GD Physical</div>
+                </div>
+
             </div>
         </div>
-
-        <div id="results-slider" class="flex overflow-x-auto gap-8 no-scrollbar scroll-smooth snap-x pb-6" style="scrollbar-width: none; -ms-overflow-style: none;">
-            
-            <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
-                        <img src="" class="w-full h-full object-cover grayscale" alt="Amit">
-                        <!-- <img src="https://i.pravatar.cc/150?u=1" class="w-full h-full object-cover grayscale" alt="Amit"> -->
-                    </div>
-                    <div>
-                        <p class="font-bold uppercase tracking-tight">Amit Kumar</p>
-                        <p class="text-sm text-gray-500">Army Aspirant</p>
-                    </div>
-                </div>
-                <p class="italic text-gray-300">"Improved my 1600m time from 6:10 to 4:55 in just 3 months. Selected in Indian Army!"</p>
-                <div class="mt-4 text-[#ccff00] font-bold">1600m Timing: 4:55s</div>
-            </div>
-
-            <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
-                        <!-- <img src="https://i.pravatar.cc/150?u=2" class="w-full h-full object-cover grayscale" alt="Rahul"> -->
-                        <img src="" class="w-full h-full object-cover grayscale" alt="Rahul">
-                    </div>
-                    <div>
-                        <p class="font-bold uppercase tracking-tight">Rahul Singh</p>
-                        <p class="text-sm text-gray-500">100m Sprinter</p>
-                    </div>
-                </div>
-                <p class="italic text-gray-300">"The scientific warmup and explosive training here is world-class. Gained massive speed."</p>
-                <div class="mt-4 text-[#ccff00] font-bold">Champion - State Meet</div>
-            </div>
-
-            <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
-                        <!-- <img src="https://i.pravatar.cc/150?u=3" class="w-full h-full object-cover grayscale" alt="Priya"> -->
-                        <img src="" class="w-full h-full object-cover grayscale" alt="Priya">
-                    </div>
-                    <div>
-                        <p class="font-bold uppercase tracking-tight">Priya Sharma</p>
-                        <p class="text-sm text-gray-500">Fitness Beginner</p>
-                    </div>
-                </div>
-                <p class="italic text-gray-300">"Lost 12kg and completed my first 5km run. The discipline here changed my life."</p>
-                <div class="mt-4 text-[#ccff00] font-bold">Weight Loss: 12KG</div>
-            </div>
-
-            <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
-                        <img src="" class="w-full h-full object-cover grayscale" alt="Vikas">
-                        <!-- <img src="https://i.pravatar.cc/150?u=4" class="w-full h-full object-cover grayscale" alt="Vikas"> -->
-                    </div>
-                    <div>
-                        <p class="font-bold uppercase tracking-tight">Vikas Malik</p>
-                        <p class="text-sm text-gray-500">Police Aspirant</p>
-                    </div>
-                </div>
-                <p class="italic text-gray-300">"Thank You Guru Yogi"</p>
-                <div class="mt-4 text-[#ccff00] font-bold">Selection: Haryana Police</div>
-            </div>
-
-            <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
-                        <!-- <img src="https://i.pravatar.cc/150?u=5" class="w-full h-full object-cover grayscale" alt="Sandeep"> -->
-                        <img src="" class="w-full h-full object-cover grayscale" alt="Sandeep">
-                    </div>
-                    <div>
-                        <p class="font-bold uppercase tracking-tight">Sandeep Hooda</p>
-                        <p class="text-sm text-gray-500">800m Runner</p>
-                    </div>
-                </div>
-                <p class="italic text-gray-300">"Guru Yogi’s focus on stamina and recovery made me a different athlete. 1st place in District."</p>
-                <div class="mt-4 text-[#ccff00] font-bold">Medalist: District Meet</div>
-            </div>
-
-            <div class="min-w-[85%] md:min-w-[31%] snap-center bg-black p-6 rounded-xl border-l-4 border-[#ccff00]">
-                <div class="flex items-center mb-4">
-                    <div class="w-16 h-16 bg-gray-700 rounded-full mr-4 overflow-hidden">
-                        <!-- <img src="https://i.pravatar.cc/150?u=6" class="w-full h-full object-cover grayscale" alt="Anjali"> -->
-                        <img src="" class="w-full h-full object-cover grayscale" alt="Anjali">
-                    </div>
-                    <div>
-                        <p class="font-bold uppercase tracking-tight">Anjali Rani</p>
-                        <p class="text-sm text-gray-500">Defense Aspirant</p>
-                    </div>
-                </div>
-                <p class="italic text-gray-300">"I thought girls couldn't run long distances. Coach Yogi proved me wrong. Cleared my physicals!"</p>
-                <div class="mt-4 text-[#ccff00] font-bold">Cleared: SSC GD Physical</div>
-            </div>
-
-        </div>
-    </div>
-</section>
+    </section>
 
     <section id="programs" class="py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-4xl font-bold mb-4 text-center">CHOOSE YOUR <span class="neon-text">MISSION</span></h2>
             <p class="text-center text-gray-400 mb-12">Batch filling fast. Limited slots for personalized attention.</p>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div class="bg-zinc-800 rounded-2xl overflow-hidden flex flex-col group hover:scale-105 transition">
                     <div class="h-48 bg-gray-700 relative">
-                        <img src="images/guide1.avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" alt="Training">
+                        <img src="images/guide1.avif"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition"
+                            alt="Training">
                     </div>
                     <div class="p-6 flex-grow">
                         <h3 class="text-2xl font-bold mb-2">Army/Police Prep</h3>
@@ -250,16 +312,21 @@
                             <li><i class="fas fa-check neon-text mr-2"></i> Long Jump/High Jump</li>
                             <li><i class="fas fa-check neon-text mr-2"></i> Stamina & Discipline</li>
                         </ul>
-                        <a href="#join" class="block w-full py-3 text-center neon-bg text-black font-bold rounded">ENROLL NOW</a>
+                        <a href="#join"
+                            class="block w-full py-3 text-center neon-bg text-black font-bold rounded">ENROLL NOW</a>
                     </div>
                 </div>
 
-                <div class="bg-zinc-800 rounded-2xl overflow-hidden flex flex-col group hover:scale-105 transition border-2 border-[#ccff00]">
+                <div
+                    class="bg-zinc-800 rounded-2xl overflow-hidden flex flex-col group hover:scale-105 transition border-2 border-[#ccff00]">
                     <div class="h-48 bg-gray-700 relative">
-                        <img src="images/guide2.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" alt="Sprints">
+                        <img src="images/guide2.jpg"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition"
+                            alt="Sprints">
                     </div>
                     <div class="p-6 flex-grow">
-                        <div class="absolute top-2 right-2 neon-bg text-black text-[10px] px-2 py-1 font-bold">POPULAR</div>
+                        <div class="absolute top-2 right-2 neon-bg text-black text-[10px] px-2 py-1 font-bold">POPULAR
+                        </div>
                         <h3 class="text-2xl font-bold mb-2">Advanced Athlete</h3>
                         <p class="text-gray-400 text-sm mb-4 italic">100m to 10km competitive training.</p>
                         <ul class="text-sm space-y-2 mb-6">
@@ -267,13 +334,16 @@
                             <li><i class="fas fa-check neon-text mr-2"></i> Race Strategy</li>
                             <li><i class="fas fa-check neon-text mr-2"></i> Competition Prep</li>
                         </ul>
-                        <a href="#join" class="block w-full py-3 text-center neon-bg text-black font-bold rounded">ENROLL NOW</a>
+                        <a href="#join"
+                            class="block w-full py-3 text-center neon-bg text-black font-bold rounded">ENROLL NOW</a>
                     </div>
                 </div>
 
                 <div class="bg-zinc-800 rounded-2xl overflow-hidden flex flex-col group hover:scale-105 transition">
                     <div class="h-48 bg-gray-700 relative">
-                        <img src="images/guide3.avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" alt="Beginners">
+                        <img src="images/guide3.avif"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition"
+                            alt="Beginners">
                     </div>
                     <div class="p-6 flex-grow">
                         <h3 class="text-2xl font-bold mb-2">Beginner Run</h3>
@@ -283,13 +353,15 @@
                             <li><i class="fas fa-check neon-text mr-2"></i> Fat Loss focus</li>
                             <li><i class="fas fa-check neon-text mr-2"></i> Endurance Building</li>
                         </ul>
-                        <a href="#join" class="block w-full py-3 text-center neon-bg text-black font-bold rounded">ENROLL NOW</a>
+                        <a href="#join"
+                            class="block w-full py-3 text-center neon-bg text-black font-bold rounded">ENROLL NOW</a>
                     </div>
                 </div>
 
                 <div class="bg-zinc-800 rounded-2xl overflow-hidden flex flex-col group hover:scale-105 transition">
                     <div class="h-48 bg-gray-700 relative">
-                        <img src="images/guide4.avif" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" alt="Elite">
+                        <img src="images/guide4.avif"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition" alt="Elite">
                     </div>
                     <div class="p-6 flex-grow">
                         <h3 class="text-2xl font-bold mb-2">Personal Coaching</h3>
@@ -299,7 +371,8 @@
                             <li><i class="fas fa-check neon-text mr-2"></i> Video Analysis</li>
                             <li><i class="fas fa-check neon-text mr-2"></i> Elite Performance</li>
                         </ul>
-                        <a href="#join" class="block w-full py-3 text-center neon-bg text-black font-bold rounded">ENROLL NOW</a>
+                        <a href="#join"
+                            class="block w-full py-3 text-center neon-bg text-black font-bold rounded">ENROLL NOW</a>
                     </div>
                 </div>
             </div>
@@ -312,21 +385,26 @@
                 <h2 class="text-4xl font-bold mb-8">WHY TRAIN AT <span class="neon-text">GURU YOGI ACADEMY?</span></h2>
                 <div class="space-y-6">
                     <div class="flex items-start">
-                        <div class="p-3 bg-zinc-800 rounded-lg mr-4"><i class="fas fa-trophy neon-text text-2xl"></i></div>
+                        <div class="p-3 bg-zinc-800 rounded-lg mr-4"><i class="fas fa-trophy neon-text text-2xl"></i>
+                        </div>
                         <div>
                             <h4 class="text-xl font-bold">Scientific Methodology</h4>
-                            <p class="text-gray-400">We use VO2 max optimization and stride frequency analysis, not just random running.</p>
+                            <p class="text-gray-400">We use VO2 max optimization and stride frequency analysis, not just
+                                random running.</p>
                         </div>
                     </div>
                     <div class="flex items-start">
-                        <div class="p-3 bg-zinc-800 rounded-lg mr-4"><i class="fas fa-utensils neon-text text-2xl"></i></div>
+                        <div class="p-3 bg-zinc-800 rounded-lg mr-4"><i class="fas fa-utensils neon-text text-2xl"></i>
+                        </div>
                         <div>
                             <h4 class="text-xl font-bold">Nutrition & Recovery</h4>
-                            <p class="text-gray-400">Diet plans that fuel performance and recovery protocols to prevent injuries.</p>
+                            <p class="text-gray-400">Diet plans that fuel performance and recovery protocols to prevent
+                                injuries.</p>
                         </div>
                     </div>
                     <div class="flex items-start">
-                        <div class="p-3 bg-zinc-800 rounded-lg mr-4"><i class="fas fa-map-marker-alt neon-text text-2xl"></i></div>
+                        <div class="p-3 bg-zinc-800 rounded-lg mr-4"><i
+                                class="fas fa-map-marker-alt neon-text text-2xl"></i></div>
                         <div>
                             <h4 class="text-xl font-bold">Professional Synthetic Track</h4>
                             <p class="text-gray-400">Train on high-quality surfaces used by pro athletes in Haryana.</p>
@@ -352,9 +430,12 @@
             </div>
             <div class="w-full md:w-1/2">
                 <h2 class="text-5xl font-bold mb-6">COACH <span class="neon-text">GURU YOGI</span></h2>
-                <p class="text-2xl italic mb-6 text-gray-300">"Your limits are only in your mind. I am here to break them."</p>
+                <p class="text-2xl italic mb-6 text-gray-300">"Your limits are only in your mind. I am here to break
+                    them."</p>
                 <p class="text-gray-400 mb-8 leading-relaxed">
-                    With over 15 years of experience in middle and long-distance running, Coach Yogi has transformed 500+ students from beginners into competitive athletes. Having trained under international standards, he brings a disciplined, result-oriented approach to the Haryana running community.
+                    With over 15 years of experience in middle and long-distance running, Coach Yogi has transformed
+                    500+ students from beginners into competitive athletes. Having trained under international
+                    standards, he brings a disciplined, result-oriented approach to the Haryana running community.
                 </p>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="bg-zinc-800 p-4 rounded-lg">
@@ -370,7 +451,7 @@
         </div>
     </section>
 
-    
+
 
     <section id="pricing" class="py-20 bg-zinc-900">
         <div class="max-w-7xl mx-auto px-4 text-center">
@@ -385,10 +466,14 @@
                         <li><i class="fas fa-check mr-2 neon-text"></i> Providing Personal Training</li>
                         <!-- <li><i class="fas fa-check mr-2 neon-text"></i> Weekly Time</li> -->
                     </ul>
-                    <a href="#join" class="block w-full py-3 border border-white rounded font-bold hover:bg-white hover:text-black">SELECT PLAN</a>
+                    <a href="#join"
+                        class="block w-full py-3 border border-white rounded font-bold hover:bg-white hover:text-black">SELECT
+                        PLAN</a>
                 </div>
                 <div class="bg-black p-8 rounded-2xl border-2 border-[#ccff00] relative scale-105">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 neon-bg text-black px-4 py-1 text-sm font-bold rounded-full">BEST VALUE</div>
+                    <div
+                        class="absolute -top-4 left-1/2 -translate-x-1/2 neon-bg text-black px-4 py-1 text-sm font-bold rounded-full">
+                        BEST VALUE</div>
                     <h3 class="text-xl mb-4">3-Month Program</h3>
                     <div class="text-4xl font-bold mb-6">₹4,999<span class="text-sm text-gray-500">/3 mo</span></div>
                     <ul class="text-left space-y-3 mb-8 text-gray-400">
@@ -397,7 +482,8 @@
                         <li><i class="fas fa-check mr-2 neon-text"></i> Guru Yogi's Special Kit</li>
                         <li><i class="fas fa-check mr-2 neon-text"></i> 24/7 WhatsApp Support</li>
                     </ul>
-                    <a href="#join" class="block w-full py-3 neon-bg text-black rounded font-bold hover:opacity-90">JOIN NOW</a>
+                    <a href="#join" class="block w-full py-3 neon-bg text-black rounded font-bold hover:opacity-90">JOIN
+                        NOW</a>
                 </div>
                 <div class="bg-black p-8 rounded-2xl border border-white/10 hover:border-[#ccff00] transition">
                     <h3 class="text-xl mb-4">Trial Pack</h3>
@@ -407,163 +493,214 @@
                         <li><i class="fas fa-check mr-2 neon-text"></i> Meet the Coach</li>
                         <li><i class="fas fa-check mr-2 neon-text"></i> Performance Audit</li>
                     </ul>
-                    <a href="#join" class="block w-full py-3 border border-white rounded font-bold hover:bg-white hover:text-black">BOOK TRIAL</a>
+                    <a href="#join"
+                        class="block w-full py-3 border border-white rounded font-bold hover:bg-white hover:text-black">BOOK
+                        TRIAL</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ============================================================
+         PHYSICAL CLEARED SECTION
+         Students add karne ke liye neeche <script> me STUDENTS list dekho.
+         ============================================================ -->
+    <section id="cleared" class="py-20 px-4 bg-black">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-3">PHYSICAL <span class="neon-text">CLEARED</span></h2>
+                    <p class="text-gray-400 max-w-md">Our students who cleared the physical round with Guru Yogi Academy
+                        training.</p>
+                </div>
+                <div class="neon-border rounded-xl px-6 py-3 text-center self-start md:self-auto">
+                    <p id="pcTotal" class="text-3xl font-bold neon-text leading-none">1050+</p>
+                    <p class="text-xs text-gray-400 mt-1">Physical Cleared</p>
+                </div>
+            </div>
+
+            <!-- Filter tabs (JS banata hai) -->
+            <div id="pcTabs" class="flex flex-wrap gap-3 mb-8" role="tablist" aria-label="Filter students"></div>
+
+            <!-- Students grid (JS banata hai) -->
+            <div id="pcGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-5"></div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+                <button id="pcMore" type="button"
+                    class="border border-[#ccff00] text-white px-8 py-4 rounded-md font-bold uppercase hover:bg-[#ccff00] hover:text-black transition">
+                    Aur Dekho
+                </button>
+                <a href="#join"
+                    class="neon-bg text-black px-8 py-4 rounded-md font-bold uppercase text-center btn-shadow transition">
+                    Be Our Next Selection
+                </a>
+            </div>
+
+        </div>
+    </section>
+
     <section class="bg-zinc-900 py-16 overflow-hidden">
-    <div class="relative w-full">
-      <!-- Scrolling Wrapper -->
-      <div class="flex gap-6 animate-scroll">
-        <!-- Repeat this group 2x for seamless loop -->
-        <div class="flex gap-6">
-          <!-- Image Card -->
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/FB_IMG_17390874083737136.jpg" class="w-full h-full object-cover" />
-          </div>
+        <div class="relative w-full">
+            <!-- Scrolling Wrapper -->
+            <div class="flex gap-6 animate-scroll">
+                <!-- Repeat this group 2x for seamless loop -->
+                <div class="flex gap-6">
+                    <!-- Image Card -->
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/FB_IMG_17390874083737136.jpg" class="w-full h-full object-cover" />
+                    </div>
 
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/img-1.jpeg" class="w-full h-full object-cover" />
-          </div>
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/img-1.jpeg" class="w-full h-full object-cover" />
+                    </div>
 
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/img-2.jpg" class="w-full h-full object-cover" />
-          </div>
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/img-2.jpg" class="w-full h-full object-cover" />
+                    </div>
 
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/Screenshot_20230517_130143.png" class="w-full h-full object-cover" />
-          </div>
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/Screenshot_20230517_130143.png" class="w-full h-full object-cover" />
+                    </div>
 
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/IMG-20260125-WA0002.jpg" class="w-full h-full object-cover" />
-          </div>
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/IMG-20260125-WA0002.jpg" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+
+                <!-- Duplicate for Infinite Effect -->
+                <div class="flex gap-6">
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/IMG_20230402_104019.jpg" class="w-full h-full object-cover" />
+                    </div>
+
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/IMG-20230212-WA0015_1.jpg" class="w-full h-full object-cover" />
+                    </div>
+
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/IMG-20230305-WA0007.jpg" class="w-full h-full object-cover" />
+                    </div>
+
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="/images/img-3.jpg" class="w-full h-full object-cover" />
+                    </div>
+
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="/images/Screenshot_20210103_140730_3.png" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-6 mt-7 animate-scroll">
+                <!-- Repeat this group 2x for seamless loop -->
+                <div class="flex gap-6">
+                    <!-- Image Card -->
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/Screenshot_20260127_093539.png" class="w-full h-full object-cover" />
+                    </div>
+
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/Screenshot_20260127_093325.png" class="w-full h-full object-cover" />
+                    </div>
+
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/IMG-20230411-WA0026.jpg" class="w-full h-full object-cover" />
+                    </div>
+
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/IMG-20230703-WA0004.jpg" class="w-full h-full object-cover" />
+                    </div>
+
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/IMG-20230505-WA0033.jpg" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+
+                <!-- Duplicate for Infinite Effect -->
+                <div class="flex gap-6">
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/Screenshot_20260127_093414.png" class="w-full h-full object-cover" />
+                    </div>
+
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/Screenshot_20260127_093553.png" class="w-full h-full object-cover" />
+                    </div>
+
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="images/Screenshot_20260127_093539.png" class="w-full h-full object-cover" />
+                    </div>
+
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="/images/IMG-20220127-WA0001.jpg" class="w-full h-full object-cover" />
+                    </div>
+
+                    <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
+                        <img src="/images/IMG-20220929-WA0004.jpg" class="w-full h-full object-cover" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gradient Fade Left -->
+            <div class="absolute top-0 left-0 h-full w-32  pointer-events-none"></div>
+
+            <!-- Gradient Fade Right -->
+            <div class="absolute top-0 right-0 h-full w-32 pointer-events-none"></div>
         </div>
-
-        <!-- Duplicate for Infinite Effect -->
-        <div class="flex gap-6">
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/IMG_20230402_104019.jpg" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/IMG-20230212-WA0015_1.jpg" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/IMG-20230305-WA0007.jpg" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="/images/img-3.jpg" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="/images/Screenshot_20210103_140730_3.png" class="w-full h-full object-cover" />
-          </div>
-        </div>
-      </div>
-      <div class="flex gap-6 mt-7 animate-scroll">
-        <!-- Repeat this group 2x for seamless loop -->
-        <div class="flex gap-6">
-          <!-- Image Card -->
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/Screenshot_20260127_093539.png" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/Screenshot_20260127_093325.png" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/IMG-20230411-WA0026.jpg" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/IMG-20230703-WA0004.jpg" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/IMG-20230505-WA0033.jpg" class="w-full h-full object-cover" />
-          </div>
-        </div>
-
-        <!-- Duplicate for Infinite Effect -->
-        <div class="flex gap-6">
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/Screenshot_20260127_093414.png" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/Screenshot_20260127_093553.png" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="images/Screenshot_20260127_093539.png" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="/images/IMG-20220127-WA0001.jpg" class="w-full h-full object-cover" />
-          </div>
-
-          <div class="w-[260px] h-[420px] rounded-3xl overflow-hidden shrink-0">
-            <img src="/images/IMG-20220929-WA0004.jpg" class="w-full h-full object-cover" />
-          </div>
-        </div>
-      </div>
-
-      <!-- Gradient Fade Left -->
-      <div class="absolute top-0 left-0 h-full w-32  pointer-events-none"></div>
-
-      <!-- Gradient Fade Right -->
-      <div class="absolute top-0 right-0 h-full w-32 pointer-events-none"></div>
-    </div>
-  </section>
+    </section>
 
     <section id="join" class="py-20 px-4 bg-black">
-    <div class="max-w-5xl mx-auto bg-zinc-900 rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
-        <div class="w-full md:w-1/2 p-12 bg-[#ccff00] text-black">
-            <h2 class="text-5xl font-black leading-none mb-6">STOP DREAMING.<br>START TRAINING.</h2>
-            <p class="text-xl font-bold mb-8">The next batch starts on Monday. Hurry up only few spots left.</p>
-            <div class="space-y-4 font-bold">
-                <p><i class="fas fa-map-marker-alt mr-2"></i> SD College, Palwal, Haryana</p>
-                <p><i class="fas fa-phone mr-2"></i> +91 8683861820</p>
+        <div class="max-w-5xl mx-auto bg-zinc-900 rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
+            <div class="w-full md:w-1/2 p-12 bg-[#ccff00] text-black">
+                <h2 class="text-5xl font-black leading-none mb-6">STOP DREAMING.<br>START TRAINING.</h2>
+                <p class="text-xl font-bold mb-8">The next batch starts on Monday. Hurry up only few spots left.</p>
+                <div class="space-y-4 font-bold">
+                    <p><i class="fas fa-map-marker-alt mr-2"></i> SD College, Palwal, Haryana</p>
+                    <p><i class="fas fa-phone mr-2"></i> +91 8683861820</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 p-12">
+                <form action="https://formspree.io/f/xkoyvply" method="POST" class="space-y-4">
+                    <div>
+                        <label class="block text-sm mb-1 uppercase font-bold text-gray-400">Full Name</label>
+                        <input type="text" name="name" required
+                            class="w-full bg-zinc-800 border border-zinc-700 rounded p-3 focus:outline-none focus:border-[#ccff00] text-white"
+                            placeholder="Enter name">
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-1 uppercase font-bold text-gray-400">Phone (WhatsApp)</label>
+                        <input type="tel" name="phone" required
+                            class="w-full bg-zinc-800 border border-zinc-700 rounded p-3 focus:outline-none focus:border-[#ccff00] text-white"
+                            placeholder="Enter mobile number">
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-1 uppercase font-bold text-gray-400">Select Goal</label>
+                        <select name="goal"
+                            class="w-full bg-zinc-800 border border-zinc-700 rounded p-3 focus:outline-none focus:border-[#ccff00] text-white">
+                            <option value="Army Physical">Indian Army Physical</option>
+                            <option value="Police Test">State Police Test</option>
+                            <option value="Professional Sprints">Professional Sprints</option>
+                            <option value="Fitness">Weight Loss / General Fitness</option>
+                        </select>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-[#ccff00] text-black font-black py-4 rounded uppercase text-lg mt-4 hover:tracking-widest transition-all">
+                        SEND MY APPLICATION
+                    </button>
+                    <p class="text-[10px] text-center text-gray-600 mt-2">By clicking, you agree to start your
+                        transformation journey.</p>
+                </form>
             </div>
         </div>
-        <div class="w-full md:w-1/2 p-12">
-            <form action="https://formspree.io/f/xkoyvply" method="POST" class="space-y-4">
-                <div>
-                    <label class="block text-sm mb-1 uppercase font-bold text-gray-400">Full Name</label>
-                    <input type="text" name="name" required class="w-full bg-zinc-800 border border-zinc-700 rounded p-3 focus:outline-none focus:border-[#ccff00] text-white" placeholder="Enter name">
-                </div>
-                <div>
-                    <label class="block text-sm mb-1 uppercase font-bold text-gray-400">Phone (WhatsApp)</label>
-                    <input type="tel" name="phone" required class="w-full bg-zinc-800 border border-zinc-700 rounded p-3 focus:outline-none focus:border-[#ccff00] text-white" placeholder="Enter mobile number">
-                </div>
-                <div>
-                    <label class="block text-sm mb-1 uppercase font-bold text-gray-400">Select Goal</label>
-                    <select name="goal" class="w-full bg-zinc-800 border border-zinc-700 rounded p-3 focus:outline-none focus:border-[#ccff00] text-white">
-                        <option value="Army Physical">Indian Army Physical</option>
-                        <option value="Police Test">State Police Test</option>
-                        <option value="Professional Sprints">Professional Sprints</option>
-                        <option value="Fitness">Weight Loss / General Fitness</option>
-                    </select>
-                </div>
-                <button type="submit" class="w-full bg-[#ccff00] text-black font-black py-4 rounded uppercase text-lg mt-4 hover:tracking-widest transition-all">
-                    SEND MY APPLICATION
-                </button>
-                <p class="text-[10px] text-center text-gray-600 mt-2">By clicking, you agree to start your transformation journey.</p>
-            </form>
-        </div>
-    </div>
-</section>
+    </section>
 
     <footer class="py-12 border-t border-white/10 text-center">
         <div class="mb-8">
-            <a href="https://www.instagram.com/guru_yogi_athletic_academy_pal/" target="_blank" class="mx-3 text-xl hover:text-[#ccff00] transition"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="mx-3 text-xl hover:text-[#ccff00] transition" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.youtube.com/channel/UCWp7C8-i5M7KE3KScx8gtOA" target="_blank" class="mx-3 text-xl hover:text-[#ccff00] transition"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/guru_yogi_athletic_academy_pal/" target="_blank"
+                class="mx-3 text-xl hover:text-[#ccff00] transition"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="mx-3 text-xl hover:text-[#ccff00] transition" target="_blank"><i
+                    class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/channel/UCWp7C8-i5M7KE3KScx8gtOA" target="_blank"
+                class="mx-3 text-xl hover:text-[#ccff00] transition"><i class="fab fa-youtube"></i></a>
         </div>
         <p id="copyright" class="text-gray-500 text-sm"></p>
     </footer>
@@ -579,37 +716,147 @@
             });
         });
         document.getElementById("copyright").innerHTML =
-  `© ${new Date().getFullYear()} Guru Yogi Athletic Academy. No excuses, just results.`;
+            `© ${new Date().getFullYear()} Guru Yogi Athletic Academy. No excuses, just results.`;
 
-  const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
 
-    function toggleMenu() {
-        // Toggle the slide-in class (Removes translate-x-full to show menu)
-        mobileMenu.classList.toggle('translate-x-full');
-        
-        // Change icon and handle body scroll
-        if (mobileMenu.classList.contains('translate-x-full')) {
-            menuIcon.classList.replace('fa-times', 'fa-bars');
-            document.body.style.overflow = 'auto'; 
-        } else {
-            menuIcon.classList.replace('fa-bars', 'fa-times');
-            document.body.style.overflow = 'hidden'; // Stop background from scrolling
+        function toggleMenu() {
+            // Toggle the slide-in class (Removes translate-x-full to show menu)
+            mobileMenu.classList.toggle('translate-x-full');
+
+            // Change icon and handle body scroll
+            if (mobileMenu.classList.contains('translate-x-full')) {
+                menuIcon.classList.replace('fa-times', 'fa-bars');
+                document.body.style.overflow = 'auto';
+            } else {
+                menuIcon.classList.replace('fa-bars', 'fa-times');
+                document.body.style.overflow = 'hidden'; // Stop background from scrolling
+            }
         }
-    }
 
-    menuBtn.addEventListener('click', toggleMenu);
+        menuBtn.addEventListener('click', toggleMenu);
 
-    function scrollResults(direction) {
-        const slider = document.getElementById('results-slider');
-        const scrollAmount = slider.clientWidth * 0.8; // Scroll about 80% of the visible area
-        if (direction === 'left') {
-            slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        } else {
-            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        function scrollResults(direction) {
+            const slider = document.getElementById('results-slider');
+            const scrollAmount = slider.clientWidth * 0.8; // Scroll about 80% of the visible area
+            if (direction === 'left') {
+                slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else {
+                slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
         }
-    }
+    </script>
+
+    <!-- ============================================================
+         PHYSICAL CLEARED: students list + filter + load more
+         ============================================================ -->
+    <script>
+        (function () {
+            /* ================= SETTINGS ================= */
+            var TOTAL_LABEL = "1050+";                       // counter me jo likhna hai
+            var PER_PAGE = 12;                           // ek baar me kitne students dikhane hain
+            var CATEGORIES = ["Army", "Police", "Other"];  // filter tabs
+
+            /* ================= STUDENTS LIST =================
+               Naya student add karna ho to bas ek line copy karke badlo:
+               { name: "Naam", cat: "Army", post: "Indian Army", detail: "1600m: 5:10", photo: "images/cleared/naam.jpg" },
+    
+               cat wahi likho jo CATEGORIES me hai (Army / Police / Other).
+               Sabse naya student list me sabse upar rakho.
+               detail nahi dikhana to "" likh do.
+            ================================================ */
+            var STUDENTS = [
+                { name: "Summit", cat: "Police", post: "Haryana Police", photo: "images/cleared/1.jpg" },
+                { name: "Sourav", cat: "Police", post: "Delhi Police", photo: "images/sourav-sagar.jpeg" },
+                { name: "Sagar", cat: "Police", post: "Delhi Police", photo: "images/sourav-sagar.jpeg" },
+                { name: "Mani", cat: "Police", post: "Delhi Police", photo: "mani.jpeg" },
+                { name: "Rohit", cat: "Police", post: "Delhi Police", photo: "images/rohit.jpeg" },
+                { name: "Mohit", cat: "Army", post: "Agniveer", photo: "images/mohit.jpeg" },
+                { name: "Karan", cat: "Army", post: "Agniveer", photo: "images/karan.jpeg" },
+                { name: "Gourav", cat: "Police", post: "Haryana Police", photo: "images/cleared/5.jpg" },
+                { name: "Manoj", cat: "Police", post: "Haryana Police", photo: "images/cleared/6.jpg" },
+                { name: "Manoj", cat: "Other", post: "CRPF", photo: "images/cleared/6.jpg" }
+                // ... baaki students yahan add karte jao
+            ];
+
+            /* ================= CODE (isse chhedna nahi hai) ================= */
+            var grid = document.getElementById("pcGrid");
+            var tabsBox = document.getElementById("pcTabs");
+            var moreBtn = document.getElementById("pcMore");
+            var active = "All";
+            var shown = PER_PAGE;
+
+            document.getElementById("pcTotal").textContent = TOTAL_LABEL;
+
+            function esc(s) {
+                return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+                    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+                });
+            }
+
+            function filtered() {
+                return active === "All" ? STUDENTS : STUDENTS.filter(function (s) { return s.cat === active; });
+            }
+
+            function renderTabs() {
+                var names = ["All"].concat(CATEGORIES);
+                tabsBox.innerHTML = names.map(function (n) {
+                    var count = n === "All" ? STUDENTS.length : STUDENTS.filter(function (s) { return s.cat === n; }).length;
+                    if (n !== "All" && count === 0) return "";
+                    var isActive = n === active;
+                    var cls = isActive
+                        ? "bg-[#ccff00] text-black border-[#ccff00]"
+                        : "bg-transparent text-white border-white/20 hover:border-[#ccff00]";
+                    return '<button type="button" role="tab" data-cat="' + esc(n) + '" aria-selected="' + isActive + '" ' +
+                        'class="pc-tab px-5 py-2 rounded-full border font-bold text-sm transition ' + cls + '">' +
+                        esc(n) + ' <span class="font-normal opacity-60 ml-1">' + count + "</span></button>";
+                }).join("");
+            }
+
+            function cardHTML(s) {
+                var initial = esc((s.name || "?").charAt(0).toUpperCase());
+                return '<article class="bg-zinc-900 border border-white/10 rounded-xl overflow-hidden hover:border-[#ccff00] hover:-translate-y-1 transition">' +
+                    '<div class="relative aspect-[3/4] bg-zinc-800">' +
+                    '<div class="absolute inset-0 flex items-center justify-center text-6xl font-bold neon-text sporty">' + initial + "</div>" +
+                    '<img src="' + esc(s.photo) + '" alt="' + esc(s.name) + ' - physical cleared" loading="lazy" ' +
+                    'class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">' +
+                    '<span class="absolute left-2 bottom-2 neon-bg text-black text-[11px] font-bold px-3 py-1 rounded-full">\u2713 PHYSICAL CLEARED</span>' +
+                    "</div>" +
+                    '<div class="p-3 md:p-4">' +
+                    '<h3 class="text-base md:text-lg font-bold leading-tight">' + esc(s.name) + "</h3>" +
+                    '<p class="text-sm text-gray-400">' + esc(s.post) + "</p>" +
+                    (s.detail ? '<p class="text-sm font-bold mt-2 neon-text">' + esc(s.detail) + "</p>" : "") +
+                    "</div></article>";
+            }
+
+            function render() {
+                var list = filtered();
+                grid.innerHTML = list.length
+                    ? list.slice(0, shown).map(cardHTML).join("")
+                    : '<p class="col-span-full text-center text-gray-400 py-10">Is category me abhi koi student nahi hai.</p>';
+                moreBtn.classList.toggle("hidden", shown >= list.length);
+            }
+
+            tabsBox.addEventListener("click", function (e) {
+                var btn = e.target.closest(".pc-tab");
+                if (!btn) return;
+                active = btn.getAttribute("data-cat");
+                shown = PER_PAGE;
+                renderTabs();
+                render();
+            });
+
+            moreBtn.addEventListener("click", function () {
+                shown += PER_PAGE;
+                render();
+            });
+
+            renderTabs();
+            render();
+        })();
     </script>
 </body>
+
 </html>
